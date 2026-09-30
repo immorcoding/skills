@@ -1,0 +1,37 @@
+---
+name: shape-your-project
+description: Maintain a project's shape, its living software standards per area (architecture, art direction, coding style…). Use when a decision should bind the project beyond the current task, a pattern or correction recurs a third time, a standard is contradicted or superseded, at a milestone review, or to set up a new project's standards.
+---
+
+# Shape your project
+
+A project's **shape** is its current software standards, one file per **area** in `docs/shape/`. Shape is present tense: edit rules in place, and let git hold the history. Hardware, platform and legal facts live in their own documents; a rule cites them as its _Why_ or _Source_. Propose every edit and write it on the user's approval.
+
+## Levels
+
+- **exploring**: a bet. Follow it; flag friction.
+- **provisional**: likely to hold. Follow it; ask before breaking it.
+- **settled**: proven. Enforce it.
+
+Promote only on evidence: work that depends on the rule. A rule forced by a fixed constraint (hardware, platform, legal) enters as settled.
+
+## The bar
+
+A rule earns its line only if a future session, starting cold, would choose differently without it. What config or a check already states stays there.
+
+## Enforcement
+
+When a rule becomes settled, hand it off, citing its id:
+
+- **mechanical** (syntax, banned API, import shape, file location) → an automated check: lint rule, pre-commit hook or CI job;
+- **judgement** about code → a pointer in `CODING_STANDARDS.md`, so the review agent enforces it.
+
+## Modes
+
+Read the one file for the mode that fits what triggered you:
+
+- No `docs/shape/` yet → [modes/setup.md](modes/setup.md)
+- A lasting decision was just made → [modes/record.md](modes/record.md)
+- A pattern or correction recurred a third time → [modes/propose.md](modes/propose.md)
+- A milestone, or the user asks for a review → [modes/review.md](modes/review.md)
+- A standard is superseded, unused, contradicted or out of scope → [modes/retire.md](modes/retire.md)

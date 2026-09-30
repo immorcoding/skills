@@ -24,7 +24,11 @@ A rule earns its line only if a future session, starting cold, would choose diff
 When a rule becomes settled, hand it off, citing its id:
 
 - **mechanical** (syntax, banned API, import shape, file location) → an automated check: lint rule, pre-commit hook or CI job;
-- **judgement** about code → a pointer in `CODING_STANDARDS.md`, so the review agent enforces it.
+- **judgement** about code → a pointer in the project's coding-standards doc (`CODING_STANDARDS.md` unless one exists), so reviewers, human or agent, apply it.
+
+## ADRs
+
+A hard-to-reverse decision also earns an ADR: its _why_, kept after the rule changes. Write it through an installed `domain-modeling` skill (any namespace, e.g. `supermatt:domain-modeling`); without one, write it yourself as a short paragraph in `docs/adr/NNNN-slug.md`, numbered after the highest existing one.
 
 ## Modes
 

@@ -1,0 +1,20 @@
+# Draining an inbox on the writer branch
+
+Fixture: shaped
+Human: present
+
+## Prompt
+
+`feature/hud` was just merged into main. Drain the shape inbox.
+
+## Script
+
+- The `proposed` draft about HUD colours: "Decline it."
+- Approve everything else.
+
+## Expect
+
+- [ ] `docs/shape/inbox/feature-hud.md` is gone, and `docs/shape/inbox/` holds no file
+- [ ] `architecture.md` has an ARCH-5 rule saying enemies extend `EnemyBase`, and reads `Next id: ARCH-6`
+- [ ] `coding-style.md` Signals holds the STYLE-1 cite line from the inbox
+- [ ] The HUD colour draft appears in no file under `docs/shape/`

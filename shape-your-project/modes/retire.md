@@ -9,4 +9,4 @@ A rule no longer holds. It retires when it is:
 
 1. Name the reason and propose the retirement. A settled rule needs the user's explicit yes.
 2. Delete the rule. Move the rule to **Rejected** when someone is likely to propose it again.
-3. **Cascade** along the rule's own _Source_ and _Check_ links, then everything else that cites its id: the check, the coding-standards pointer, reference assets, its ADR (marked superseded or deprecated, pointing at what replaced it), its signals, and the area's entry line once the area is empty. Done when a repo search for the id finds it nowhere outside Rejected.
+3. **Cascade** along the rule's own _Source_ and _Check_ links, then everything else that cites its id: the check, the coding-standards pointer, reference assets, its ADR (marked superseded or deprecated, pointing at what replaced it), its signals, and the area's entry line once the area is empty. Done when no file in the repo cites the id as a live rule. History may still name it (a Rejected entry, a superseded ADR), since ids are never reused.

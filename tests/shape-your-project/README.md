@@ -9,6 +9,7 @@ Tests for `shape-your-project`. A **scenario run** gives a fresh agent the skill
 - `scenarios/*.md`: one scenario per file. A scenario's overlay, if any, is the directory beside it with the same name plus `.overlay/`, copied over the fixture.
 - `scenarios/<name>.history.sh` (optional, beside the scenario): run inside the prepared repo after the fixture commit, to add history the scenario depends on.
 - `prepare.sh <scenario>`: builds a run directory and prints its path.
+- `hooks/run.sh`: unit tests for the sample hooks in `shape-your-project/hooks/`; plain `sh`, no agent, run them on every hook change.
 
 ## Scenario format
 

@@ -3,10 +3,10 @@
 A rule no longer holds. It retires when it is:
 
 - **superseded**: a newer decision replaces it;
-- **unused**: nothing follows or depends on it;
-- **contradicted**: the code keeps breaking it and nobody objects;
+- **dead**: its subject is gone from the repo, or the user confirms it never changes a decision;
+- **contradicted**: the code keeps breaking it (contradiction signals pile up) and nobody wants it enforced;
 - **out of scope**: its area left the project.
 
 1. Name the reason and propose the retirement. A settled rule needs the user's explicit yes.
-2. Delete the rule. Move it to **Rejected** when someone is likely to propose it again.
-3. **Cascade** through everything that enforces or cites it: the check, the coding-standards pointer, reference assets, its ADR (mark it superseded by the ADR that replaced it), and the area's entry line once the area is empty. Done when a search of the repo for the rule id finds nothing live.
+2. Delete the rule; Next id stays where it is. Move the rule to **Rejected** when someone is likely to propose it again.
+3. **Cascade** along the rule's own _Source_ and _Check_ links, then everything else that cites its id: the check, the coding-standards pointer, reference assets, its ADR (marked superseded or deprecated, pointing at what replaced it), its signals, and the area's entry line once the area is empty. Done when a repo search for the id finds it nowhere outside Rejected.

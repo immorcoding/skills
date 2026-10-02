@@ -2,4 +2,7 @@
 
 The **rule of three**: once is a choice, twice a coincidence, three times a convention.
 
-A convention is due when the same pattern appears a third time in the work, or the user corrects the same mistake a third time. Name the three instances, draft the rule, and ask. On the user's yes, capture it through [record.md](record.md).
+Count the instances of the pattern: occurrences in the repo, plus matching **correction** signals across all area files, plus the one in front of you.
+
+- **Under three**: add a correction signal to the area it belongs to (rule id `new`), so the next session can count it.
+- **Three or more**: name every instance, draft the rule, and ask. On the user's yes, capture it through [record.md](record.md).

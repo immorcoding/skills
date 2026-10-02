@@ -12,7 +12,8 @@ your-repo/
 └── docs/shape/
     ├── architecture.md    ← one file per area you chose
     ├── coding-style.md
-    └── art-direction.md
+    ├── art-direction.md
+    └── inbox/             ← per-branch queues, drained on the writer branch
 ```
 
 The **Project shape block** is what makes the shape work in every session, even on a machine without this skill. It lists the areas, explains the levels, and asks agents to leave signals (below). If you use both Claude Code and Codex, the block goes in `AGENTS.md` and `CLAUDE.md` imports it, so both tools see it.
@@ -88,6 +89,16 @@ Want a nudge? Ask Claude Code to schedule one, e.g. *"remind me to review the pr
 > Retire ARCH-3, we switched to behaviour trees.
 
 The agent deletes the rule and cleans up everything that cites it (checks, standards pointers, ADRs, signals). Retired ids are never reused, so an old commit or note citing `ARCH-3` never points at a different rule.
+
+### 5. Work on branches in parallel
+
+Area files have one writer, the **writer branch** (usually `main`), so parallel branches never fight over them. On any other branch, agents write their signals, drafts and your approvals to the branch's **inbox**, `docs/shape/inbox/<branch>.md`, which merges with the code. On the writer branch, the agent then **drains** it: signals join their areas, approved drafts become rules with the next id, the rest are put to you.
+
+> Drain the shape inbox.
+
+A rule that blocks the work can't wait for the merge: the agent opens a decision issue for you (or asks in the session), and the blocked tickets wait on it.
+
+Want it enforced rather than asked? [hooks/](hooks/README.md) holds git and agent hooks (plain `sh`) that refuse area-file edits off the writer branch and point at the inbox instead.
 
 ## With or without Matt Pocock's skills
 

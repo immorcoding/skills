@@ -15,5 +15,7 @@ Latest scenario runs, judged on written files only. Update this table whenever s
 | 09 pending proposal | not run (feature absent) | pass | 2026-10-02 |
 | 10 settle art | not run (feature absent) | pass | 2026-10-02 |
 | 11 setup, existing guide | pass | pass | 2026-10-02 |
+| 12 branch inbox | not run (feature absent) | not run yet | |
+| 13 drain | not run (feature absent) | not run yet | |
 
 06, 07 and 11 passed on the old text too: the model already did those by default, so their changes harden rather than fix.

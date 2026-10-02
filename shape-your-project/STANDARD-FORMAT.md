@@ -48,7 +48,7 @@ Next id: ART-4
 
 - **One line per rule**: id · level · the rule · _Why:_ one line · _Source:_ optional link (ADR, ticket, commit, external doc) · _Check:_ the enforcement, once settled.
 - **State the target**: "Sprites are 32×32", not "Don't use other sizes".
-- **Next id** is the id the next rule takes. Take it, then bump it; it only ever rises, so a retired id stays retired. A file without the line gets one: one past the highest id in the file, in Rejected, or in the file's git history.
+- **Next id** is the id the next rule takes. Take it, then bump it, on the writer branch only ([INBOX.md](INBOX.md)); it only ever rises, so a retired id stays retired. A file without the line gets one: one past the highest id in the file, in Rejected, or in the file's git history.
 - **Pillars** are 3–5 lines of intent that settle ties the rules don't cover.
 - **References** carry what prose can't: images, example files, approved assets. Visual areas lean on references over rules.
 - **Proposed** holds drafts awaiting the user, each with why it was queued: a new rule is a rule line without an id; a retirement is `retire <id>: <reason>`. An approved rule takes the next id; an approved retirement goes through retire; a declined draft is deleted.

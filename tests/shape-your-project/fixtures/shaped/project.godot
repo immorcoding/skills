@@ -1,0 +1,5 @@
+config_version=5
+
+[application]
+config/name="Lantern"
+run/main_scene="res://src/main.tscn"

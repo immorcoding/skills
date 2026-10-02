@@ -11,7 +11,7 @@ Set up this project's shape.
 
 - What the project is: "A 2D roguelike in Godot, early prototype."
 - Areas: "Architecture, coding style and art direction."
-- Which instructions file to create: "CLAUDE.md".
+- Which tools the user works with: "Claude Code only."
 - Recommended answers: accept every recommendation.
 
 ## Expect

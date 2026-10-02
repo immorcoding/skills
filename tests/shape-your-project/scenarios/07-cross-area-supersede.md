@@ -14,5 +14,5 @@ Coding style decision: enemy behaviour lives in data-driven `.tres` behaviour re
 ## Expect
 
 - [ ] A rule capturing the decision exists in one area file
-- [ ] ARCH-1 (enum state machine inside each enemy script) is retired or rewritten in the same run
+- [ ] ARCH-1 (enum state machine inside each enemy script) is retired in the same run
 - [ ] `run-log.md` shows the agent named ARCH-1 as superseded

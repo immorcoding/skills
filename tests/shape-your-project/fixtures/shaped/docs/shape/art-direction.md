@@ -2,6 +2,8 @@
 
 How Lantern looks.
 
+Next id: ART-3
+
 ## Pillars
 
 - Darkness is the default; light is precious.

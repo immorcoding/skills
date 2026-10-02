@@ -7,7 +7,7 @@ Tests for `shape-your-project`. A **scenario run** gives a fresh agent the skill
 - `fixtures/base/`: Lantern, a tiny Godot roguelike with no shape.
 - `fixtures/shaped/`: the same repo with a shape: three areas, an ADR, an entry block in `CLAUDE.md`.
 - `scenarios/*.md`: one scenario per file. A scenario's overlay, if any, is the directory beside it with the same name plus `.overlay/`, copied over the fixture.
-- `<name>.history.sh` (optional): run inside the prepared repo after the fixture commit, to add history the scenario depends on.
+- `scenarios/<name>.history.sh` (optional, beside the scenario): run inside the prepared repo after the fixture commit, to add history the scenario depends on.
 - `prepare.sh <scenario>`: builds a run directory and prints its path.
 
 ## Scenario format

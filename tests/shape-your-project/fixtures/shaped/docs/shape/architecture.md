@@ -2,6 +2,8 @@
 
 How Lantern's code is structured.
 
+Next id: ARCH-5
+
 ## Rules
 
 - **ARCH-1** · provisional · Enemies use an enum-driven state machine inside their own script. _Why:_ simple and debuggable at our scale.

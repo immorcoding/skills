@@ -51,7 +51,7 @@ Next id: ART-4
 - **Next id** is the id the next rule takes. Take it, then bump it; it only ever rises, so a retired id stays retired. A file without the line gets one: one past the highest id in the file, in Rejected, or in the file's git history.
 - **Pillars** are 3–5 lines of intent that settle ties the rules don't cover.
 - **References** carry what prose can't: images, example files, approved assets. Visual areas lean on references over rules.
-- **Proposed** holds drafts awaiting the user: a rule line without an id, plus why it was queued. An approved draft takes the next id; a declined one is deleted.
+- **Proposed** holds drafts awaiting the user, each with why it was queued: a new rule is a rule line without an id; a retirement is `retire <id>: <reason>`. An approved rule takes the next id; an approved retirement goes through retire; a declined draft is deleted.
 - **Signals** are evidence for later sessions: date · kind · rule id or `new` · one-line note. The kinds:
   - **cite**: a rule decided part of a change;
   - **friction**: a rule got in the way;

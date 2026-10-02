@@ -1,13 +1,13 @@
 ---
 name: shape-your-project
-description: Maintain a project's shape, its living software standards per area (architecture, art direction, coding style…). Use when a decision should bind the project beyond the current task, a pattern or correction recurs a third time, a standard is contradicted or superseded, at a milestone review, or to set up a new project's standards.
+description: Maintain a project's shape, its living software standards per area (architecture, art direction, coding style…). Use when a decision should bind the project beyond the current task, a pattern or user correction recurs, a standard is contradicted or superseded, at a milestone review, or to set up a new project's standards.
 ---
 
 # Shape your project
 
-A project's **shape** is its current software standards, one file per **area** in `docs/shape/`, in the format of [STANDARD-FORMAT.md](STANDARD-FORMAT.md). Shape is present tense: edit rules in place, and let git hold the history. Hardware, platform and legal facts live in their own documents; a rule cites them as its _Why_ or _Source_.
+A project's **shape** is its current software standards, one file per **area** in `docs/shape/`. Read [STANDARD-FORMAT.md](STANDARD-FORMAT.md) before writing to an area file. Shape is present tense: edit rules in place, and let git hold the history. Hardware, platform and legal facts live in their own documents; a rule cites them as its _Why_ or _Source_.
 
-Propose every edit and write it on the user's approval. In an **unattended** run (nobody can approve), queue each draft in the area's Proposed section and leave every other section as it is.
+Propose every edit and write it on the user's approval. In an **unattended** run (nobody can approve), queue each draft (a new rule, or a retirement) in the area's Proposed section; signals are evidence, so add them as usual, and leave every other section as it is.
 
 ## Levels
 

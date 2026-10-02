@@ -4,9 +4,10 @@
 # Usage: prepare.sh scenarios/<name>.md [parent dir]
 set -eu
 here=$(cd "$(dirname "$0")" && pwd)
-scenario="$here/${1#./}"
+case $1 in /*|?:/*) scenario=$1 ;; *) scenario="$here/${1#./}" ;; esac
 parent=${2:-$(mktemp -d)}
 fixture=$(sed -n 's/^Fixture: *//p' "$scenario" | tr -d '\r')
+[ -n "$fixture" ] && [ -d "$here/fixtures/$fixture" ] || { echo "no valid Fixture: line in $scenario" >&2; exit 1; }
 run="$parent/repo"
 rm -rf "$run" "$parent/run-log.md"
 mkdir -p "$run"

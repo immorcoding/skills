@@ -108,7 +108,7 @@ The agent deletes the rule and cleans up everything that cites it (checks, stand
 
 ### 5. Work on branches in parallel
 
-Area files have one writer, the **writer branch** (usually `main`), so parallel branches never fight over them. On any other branch, agents write their signals, drafts and your approvals to the branch's **inbox**, `docs/shape/inbox/<branch>.md`, which merges with the code. On the writer branch, the agent then **drains** it: signals join their areas, approved drafts become rules with the next id, the rest are put to you.
+Area files have one writer, the **writer branch** (usually `main`), so parallel branches never fight over them. On any other branch, agents write their signals, drafts and your approvals to the branch's **inbox**, `docs/shape/inbox/<branch>.md`, which merges with the code. Once it reaches the writer branch, the agent **drains** it right away, after merging or as soon as it finds the inbox there: signals join their areas, approved drafts become rules with the next id, the rest are put to you.
 
 > Drain the shape inbox.
 

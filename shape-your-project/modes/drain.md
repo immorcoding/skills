@@ -1,6 +1,6 @@
 # Drain
 
-A branch with an inbox file was merged into the writer branch, or the user asks to drain. Run on the writer branch.
+A branch with an inbox file was merged into the writer branch, inbox files wait on the writer branch, or the user asks to drain. Run on the writer branch, right away: until it runs, the inbox's approved rules bind no other branch.
 
 1. Read every file in `docs/shape/inbox/` ([INBOX.md](../INBOX.md) has the format).
 2. Apply every line, in file order:

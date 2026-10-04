@@ -120,6 +120,14 @@ At setup the agent asks whether your project needs a **routing table**, `docs/sh
 
 Rows only describe; boundaries stay rules in the area files. So when an agent finds a row out of date, it just fixes it (on a branch, as a `route` line in the inbox), never blocks on it, and never asks you. `hooks/routes-check.sh` catches the rows nobody fixed.
 
+### 7. Adopt an existing glossary (optional)
+
+A long-lived `GLOSSARY.md` or `CONTEXT.md` often collects more than words: module descriptions, boundaries, register maps. When you want it lean, say:
+
+> Adopt our glossary into the shape.
+
+The agent sorts every entry into **term** (stays, trimmed), **module** (becomes a routes row), **boundary** (becomes a rule) or **detail** (moves to the module's docs), shows you the whole table once, and moves only what you accept. The glossary keeps its name, so Matt's skills still find it. Nothing happens unless you ask.
+
 Want it enforced rather than asked? [hooks/](hooks/README.md) holds git and agent hooks (plain `sh`) that refuse area-file edits off the writer branch and point at the inbox instead.
 
 ## With or without Matt Pocock's skills

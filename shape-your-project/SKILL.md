@@ -1,6 +1,6 @@
 ---
 name: shape-your-project
-description: Maintain a project's shape, its living software standards per area (architecture, art direction, coding style…). Use when a decision should bind the project beyond the current task, a pattern or user correction recurs, a standard is contradicted or superseded, at a milestone review, when a branch's shape inbox is merged, or to set up a new project's standards.
+description: Maintain a project's shape, its living software standards per area (architecture, art direction, coding style…). Use when a decision should bind the project beyond the current task, a pattern or user correction recurs, a standard is contradicted or superseded, at a milestone review, when a branch's shape inbox is merged, to set up a new project's standards, or to adopt an existing glossary into them.
 ---
 
 # Shape your project
@@ -43,3 +43,4 @@ Read the one file for the mode that fits what triggered you:
 - A milestone, or the user asks for a review → [modes/review.md](modes/review.md)
 - A rule is superseded, dead, contradicted or out of scope → [modes/retire.md](modes/retire.md)
 - A branch with an inbox file was merged, or the user asks to drain → [modes/drain.md](modes/drain.md)
+- The user asks to move an existing glossary onto the shape → [modes/adopt.md](modes/adopt.md)

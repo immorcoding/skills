@@ -11,21 +11,37 @@ your-repo/
 ├── AGENTS.md / CLAUDE.md  ← gains a short "## Project shape" block (see below)
 └── docs/shape/
     ├── architecture.md    ← one file per area you chose
-    ├── coding-style.md
+    ├── coding-style.md    ← past 15 rules, an area splits: coding-style.md (index) + coding-style.<title>.md
     ├── art-direction.md
+    ├── ROUTES.md          ← optional: what each directory holds and what to read first
     └── inbox/             ← per-branch queues, drained on the writer branch
 ```
 
 The **Project shape block** is what makes the shape work in every session, even on a machine without this skill. It lists the areas, explains the levels, and asks agents to leave signals (below). If you use both Claude Code and Codex, the block goes in `AGENTS.md` and `CLAUDE.md` imports it, so both tools see it.
 
-Each **area file** holds a few **pillars** (the intent), one-line **rules**, **references** (example files, images), **open questions**, **proposed** rules waiting for you, **signals**, and **rejected** ideas. Every rule has a permanent id and a level:
+Each **area file** holds a few **pillars** (the intent) and **open questions**, then its rules grouped under short **titles** (`sprites`, `palette`), each with a one-line scope. Under a title sit its one-line **rules**, **references** (example files, images), **proposed** rules waiting for you, **signals**, and **rejected** ideas. Every rule has a permanent id and a level:
 
 ```md
 Next id: ART-3
 
+## sprites
+
+Sprite size, grid and animation.
+
+### Rules
+
 - **ART-1** · settled · Sprites are 32×32 on a 16px grid. _Why:_ reads at 1080p. _Check:_ asset review against References.
+
+## palette
+
+Colours and the palette files they come from.
+
+### Rules
+
 - **ART-2** · exploring · Limit the palette to 32 colours. _Why:_ keeps the world cohesive.
 ```
+
+A new rule joins the title its scope fits; when none fits, the agent proposes a new title with it. Once an area passes 15 rules it splits into one file per title (`art-direction.palette.md`), and `art-direction.md` becomes the index, so agents read only the titles their work touches.
 
 | Level | Meaning | How agents treat it |
 |---|---|---|
@@ -37,7 +53,7 @@ Rules move up only on evidence, when real work depends on them.
 
 ### Signals: the shape's memory
 
-Agents forget everything between sessions, so they leave **signals**: one dated line in the area file whenever a rule decides part of a change (`cite`), gets in the way (`friction`), is broken by code (`contradiction`), or you correct the agent (`correction`).
+Agents forget everything between sessions, so they leave **signals**: one dated line under the rule's title whenever a rule decides part of a change (`cite`), gets in the way (`friction`), is broken by code (`contradiction`), or you correct the agent (`correction`).
 
 ```md
 - 2026-10-01 · friction · ART-2 · Night levels look muddy within 32 colours.
@@ -80,7 +96,7 @@ The agent sorts every rule by evidence:
 - **dead**: its subject is gone from the repo, so it's retired;
 - **silent**: there's no evidence either way, so **it asks you**. Rare-but-critical rules (like save-file migrations) live here, so they're never retired just for being quiet.
 
-You get one table with the verdicts and the evidence. Newly settled rules get enforced: mechanical ones become lint/CI checks, code judgement goes into your coding-standards doc for review, and art or audio rules are checked against approved reference assets.
+You get one table with the verdicts and the evidence. Areas past 15 rules are split along their titles, and overlapping titles are proposed for merging. Newly settled rules get enforced: mechanical ones become lint/CI checks, code judgement goes into your coding-standards doc for review, and art or audio rules are checked against approved reference assets.
 
 Want a nudge? Ask Claude Code to schedule one, e.g. *"remind me to review the project's shape every two weeks"*.
 
@@ -98,13 +114,19 @@ Area files have one writer, the **writer branch** (usually `main`), so parallel 
 
 A rule that blocks the work can't wait for the merge: the agent opens a decision issue for you (or asks in the session), and the blocked tickets wait on it.
 
+### 6. Route agents to the right code (optional)
+
+At setup the agent asks whether your project needs a **routing table**, `docs/shape/ROUTES.md`: one line per directory saying what lives there, its entry point, and which areas, rules or glossary to read before changing it. Small projects skip it. Agents read it before searching the code and hand it to the exploration subagents they start, which never see your `CLAUDE.md` or `AGENTS.md`.
+
+Rows only describe; boundaries stay rules in the area files. So when an agent finds a row out of date, it just fixes it (on a branch, as a `route` line in the inbox), never blocks on it, and never asks you. `hooks/routes-check.sh` catches the rows nobody fixed.
+
 Want it enforced rather than asked? [hooks/](hooks/README.md) holds git and agent hooks (plain `sh`) that refuse area-file edits off the writer branch and point at the inbox instead.
 
 ## With or without Matt Pocock's skills
 
 | If you have… | shape-your-project… |
 |---|---|
-| `domain-modeling` | uses it to write ADRs for hard-to-reverse decisions |
+| `domain-modeling` | uses it to write ADRs for hard-to-reverse decisions; routes link its glossary (`GLOSSARY.md` or `CONTEXT.md`, whichever you have) |
 | nothing | writes those ADRs itself as short paragraphs in `docs/adr/` |
 | `wayfinder` / `grill-with-docs` | can catch lasting decisions while you plan or grill; say "record this" to be sure |
 | `code-review` | its settled rules in your coding-standards doc get checked on every review |

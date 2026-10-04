@@ -17,5 +17,12 @@ Latest scenario runs, judged on written files only. Update this table whenever s
 | 11 setup, existing guide | pass | pass | 2026-10-02 |
 | 12 branch inbox | not run (feature absent) | not run yet | |
 | 13 drain | not run (feature absent) | not run yet | |
+| 14 review split | not run (feature absent) | pass | 2026-10-04 |
+| 15 route on branch | not run (feature absent) | pass | 2026-10-04 |
+| 16 drain route | not run (feature absent) | pass | 2026-10-04 |
+| 17 record title | not run (feature absent) | pass | 2026-10-04 |
+| 18 record split | not run (feature absent) | pass | 2026-10-04 |
+
+Runs dated before 2026-10-04 used the fixture from before titles; rerun them before release.
 
 06, 07 and 11 passed on the old text too: the model already did those by default, so their changes harden rather than fix.

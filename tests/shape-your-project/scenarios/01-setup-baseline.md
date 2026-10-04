@@ -18,6 +18,7 @@ Set up this project's shape.
 
 - [ ] `docs/shape/` holds one file per chosen area: architecture, coding style, art direction
 - [ ] Every rule line has the form id · level · rule · _Why:_
+- [ ] Every rule sits under a title heading with a one-line scope, and no two titles in an area share a scope
 - [ ] Rule ids use one prefix per area, starting at 1
 - [ ] `CLAUDE.md` exists with a `## Project shape` block listing all three areas, one line each
 - [ ] No files outside `docs/shape/` and `CLAUDE.md` changed

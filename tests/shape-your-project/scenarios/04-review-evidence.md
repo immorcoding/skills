@@ -19,3 +19,4 @@ Review the project's shape. We just finished the vertical slice.
 - [ ] `run-log.md` shows a question about every silent rule
 - [ ] The cite signals for ARCH-1 are gone from Signals
 - [ ] `run-log.md` holds a verdict table sorting rules as active, silent or dead
+- [ ] No `<area>.<title>.md` file exists: no area holds more than 15 rules

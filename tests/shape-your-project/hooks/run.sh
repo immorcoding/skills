@@ -51,6 +51,14 @@ git reset -q --hard
 git switch -qc feature/pause
 printf 'more\n' >>docs/shape/architecture.md && git add -A
 expect "pre-commit: a branch may not change an area file" 1 sh "$hooks/pre-commit.sh"
+git reset -q --hard
+printf '# Arch · enemies
+' >docs/shape/architecture.enemies.md && git add -A
+expect "pre-commit: a branch may not add a title file" 1 sh "$hooks/pre-commit.sh"
+git reset -q --hard
+git clean -qfd docs
+printf 'more
+' >>docs/shape/architecture.md && git add -A
 grep -q 'docs/shape/inbox/feature-pause.md' "$work/err" && pass "pre-commit: refusal names the inbox" || fail "pre-commit: refusal names the inbox"
 git reset -q --hard
 
@@ -108,6 +116,8 @@ expect "agent: main may edit an area file" 0 run_agent "$(claude_edit "$top" "$t
 git switch -qc feature/b
 expect "agent: a branch may not edit an area file" 2 run_agent "$(claude_edit "$top" "$top/docs/shape/architecture.md")"
 grep -q 'docs/shape/inbox/feature-b.md' "$work/err" && pass "agent: refusal names the inbox" || fail "agent: refusal names the inbox"
+expect "agent: a branch may not edit a title file" 2 run_agent "$(claude_edit "$top" "$top/docs/shape/architecture.enemies.md")"
+expect "agent: a branch may not edit ROUTES.md" 2 run_agent "$(claude_edit "$top" "$top/docs/shape/ROUTES.md")"
 expect "agent: a relative path resolves against cwd" 2 run_agent "$(claude_edit "$top/docs" "shape/architecture.md")"
 expect "agent: a branch may write its inbox" 0 run_agent "$(claude_edit "$top" "$top/docs/shape/inbox/feature-b.md")"
 expect "agent: other files are not its business" 0 run_agent "$(claude_edit "$top" "$top/src/a.gd")"
@@ -125,6 +135,28 @@ git switch -q main
 mkdir -p docs/shape/inbox && printf 'x\n' >docs/shape/inbox/feature-b.md
 expect "session-start: runs" 0 sh "$hooks/session-start.sh"
 grep -q '1 inbox file' "$work/out" && pass "session-start: counts inbox files on the writer branch" || fail "session-start: counts inbox files on the writer branch"
+
+# --- routes check ---
+new_repo routes
+expect "routes: no ROUTES.md, nothing to check" 0 sh "$hooks/routes-check.sh"
+mkdir -p src/ui src/enemies
+printf 'x\n' >src/ui/hud.gd
+printf 'x\n' >src/enemies/bat.gd
+printf '# Routes\n\nRouted: `src/*/`\n\n- `src/ui/`: HUD.\n- `src/enemies`: enemies.\n' >docs/shape/ROUTES.md
+expect "routes: every routed directory has a row" 0 sh "$hooks/routes-check.sh"
+mkdir -p src/net && printf 'x\n' >src/net/sync.gd
+expect "routes: a routed directory without a row is stale" 1 sh "$hooks/routes-check.sh"
+grep -q 'src/net/: routed, but has no row' "$work/err" && pass "routes: refusal names the directory" || fail "routes: refusal names the directory"
+mkdir -p docs/shape/inbox
+printf -- '- 2026-10-03 · routes · route · `src/net/`: multiplayer sync.\n' >docs/shape/inbox/feature-net.md
+expect "routes: an inbox route line covers the new directory" 0 sh "$hooks/routes-check.sh"
+rm -rf src/ui
+expect "routes: a row whose path is gone is stale" 1 sh "$hooks/routes-check.sh"
+printf -- '- 2026-10-03 · routes · route · `src/ui/`: gone\n' >>docs/shape/inbox/feature-net.md
+expect "routes: an inbox gone line covers the removed directory" 0 sh "$hooks/routes-check.sh"
+printf '# Routes\r\n\r\nRouted: `src/*/`\r\n\r\n- `src/enemies/`: enemies.\r\n- `src/net/`: sync.\r\n' >docs/shape/ROUTES.md
+rm -rf docs/shape/inbox
+expect "routes: CRLF line endings are read" 0 sh "$hooks/routes-check.sh"
 
 cd "$work"
 if [ "$failures" -gt 0 ]; then

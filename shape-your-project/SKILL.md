@@ -5,9 +5,9 @@ description: Maintain a project's shape, its living software standards per area 
 
 # Shape your project
 
-A project's **shape** is its current software standards, one file per **area** in `docs/shape/`. Read [STANDARD-FORMAT.md](STANDARD-FORMAT.md) before writing to an area file. Shape is present tense: edit rules in place, and let git hold the history. Hardware, platform and legal facts live in their own documents; a rule cites them as its _Why_ or _Source_.
+A project's **shape** is its current software standards, one file per **area** in `docs/shape/`, each rule under a **title** within its area; an area past 15 rules splits into one file per title. Read [STANDARD-FORMAT.md](STANDARD-FORMAT.md) before writing to an area or title file. Beside them, an optional `ROUTES.md` routes each directory to what to read before changing it; it is not an area, and [ROUTES-FORMAT.md](ROUTES-FORMAT.md) governs it. Shape is present tense: edit rules in place, and let git hold the history. Hardware, platform and legal facts live in their own documents; a rule cites them as its _Why_ or _Source_.
 
-Propose every edit and write it on the user's approval. Area files change only on the **writer branch** (usually `main`); on any other branch, read [INBOX.md](INBOX.md) first, because every write there goes to the branch's inbox instead. In an **unattended** run on the writer branch (nobody can approve), queue each draft (a new rule, or a retirement) in the area's Proposed section; signals are evidence, so add them as usual, and leave every other section as it is.
+Propose every edit and write it on the user's approval; a `ROUTES.md` row, which the tree confirms, needs none. Area and title files change only on the **writer branch** (usually `main`); on any other branch, read [INBOX.md](INBOX.md) first, because every write there goes to the branch's inbox instead. In an **unattended** run on the writer branch (nobody can approve), queue each draft (a new rule, or a retirement) in its title's Proposed section; signals are evidence, so add them as usual, and leave every other section as it is.
 
 ## Levels
 
@@ -15,7 +15,7 @@ Propose every edit and write it on the user's approval. Area files change only o
 - **provisional**: likely to hold. Follow it; ask before breaking it.
 - **settled**: proven. Enforce it.
 
-Promote only on evidence: work that depends on the rule, and the area's Signals. A rule forced by a fixed constraint (hardware, platform, legal) enters as settled.
+Promote only on evidence: work that depends on the rule, and its title's Signals. A rule forced by a fixed constraint (hardware, platform, legal) enters as settled.
 
 ## The bar
 

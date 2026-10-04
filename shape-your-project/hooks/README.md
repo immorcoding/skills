@@ -8,14 +8,15 @@ Samples that make the **writer branch** mechanical: off it, area files (`docs/sh
 | `pre-push.sh` | git `pre-push` | a branch pushed anywhere but the writer branch whose own changes (from its merge-base with the writer branch) touch area files |
 | `agent-pretooluse.sh` | Claude Code and Codex `PreToolUse` | an agent edit to an area file off the writer branch |
 | `session-start.sh` | Claude Code and Codex `SessionStart` | nothing: on the writer branch, says how many inbox files wait to be drained |
+| `routes-check.sh` | git `pre-commit`, or CI | a stale route in `docs/shape/ROUTES.md`: a row whose path is gone, or a routed directory with no row, unless an inbox `route` line covers it. Wire it only when the project keeps `ROUTES.md` |
 
-All four source `shape-lib.sh`, so copy the folder whole, e.g. to `scripts/shape-hooks/`. The writer branch is `git config shape.writerBranch`, else the branch `origin/HEAD` points at, else `main`.
+`ROUTES.md` counts as an area file here, so off the writer branch it changes only through the inbox. The first four source `shape-lib.sh`, so copy the folder whole, e.g. to `scripts/shape-hooks/`. The writer branch is `git config shape.writerBranch`, else the branch `origin/HEAD` points at, else `main`.
 
 ## Wiring
 
 Add the hooks to whatever the project already runs; never replace an existing hook.
 
-- **No hook manager**: call them from `.git/hooks/pre-commit` and `.git/hooks/pre-push` (or the folder `core.hooksPath` names), passing pre-push its arguments and stdin: `sh scripts/shape-hooks/pre-push.sh "$@"`.
+- **No hook manager**: call them from `.git/hooks/pre-commit` (`routes-check.sh` too, after `pre-commit.sh`) and `.git/hooks/pre-push` (or the folder `core.hooksPath` names), passing pre-push its arguments and stdin: `sh scripts/shape-hooks/pre-push.sh "$@"`.
 - **husky, lefthook, pre-commit**: add one command per hook in its config, same invocation.
 - **Claude Code** (`.claude/settings.json`):
 

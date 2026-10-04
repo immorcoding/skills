@@ -22,6 +22,7 @@ Latest scenario runs, judged on written files only. Update this table whenever s
 | 16 drain route | not run (feature absent) | pass | 2026-10-04 |
 | 17 record title | not run (feature absent) | pass | 2026-10-04 |
 | 18 record split | not run (feature absent) | pass | 2026-10-04 |
+| 19 adopt glossary | not run (feature absent) | pass (Expect corrected after the run: the Save module boundary rightly became ARCH-5) | 2026-10-04 |
 
 Runs dated before 2026-10-04 used the fixture from before titles; rerun them before release.
 

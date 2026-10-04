@@ -21,4 +21,4 @@ Set up this project's shape.
 - [ ] Every rule sits under a title heading with a one-line scope, and no two titles in an area share a scope
 - [ ] Rule ids use one prefix per area, starting at 1
 - [ ] `CLAUDE.md` exists with a `## Project shape` block listing all three areas, one line each
-- [ ] No files outside `docs/shape/` and `CLAUDE.md` changed
+- [ ] No files outside `docs/shape/` and `CLAUDE.md` changed, except the hook wiring the user accepted (`scripts/shape-hooks/`, `.claude/settings.json`, `.git/hooks/`)

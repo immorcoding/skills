@@ -2,14 +2,14 @@
 
 > Charter: look entries up one at a time; never read this file whole at the start of a session.
 
-## Ember
+## Oil
 
-An **Ember** is the light the player carries; it shrinks as the player takes damage and refills at shrines.
-_Avoid_: torch, light meter
+**Oil** is the lantern fuel the player carries; it shrinks as the player takes damage and refills at shrines.
+_Avoid_: ember, fuel, light meter
 
 ## Shrine
 
-A **Shrine** is a checkpoint where the Ember refills and the game saves.
+A **Shrine** is a checkpoint where Oil refills and the game saves.
 
 ## Save module
 
@@ -17,7 +17,7 @@ The **Save module** lives in `src/save.gd`. It writes and reads the player's pro
 
 ## HUD
 
-The **HUD** lives in `src/ui/`. It shows the Ember and health. HUD scripts only display state; they never change game state.
+The **HUD** lives in `src/ui/`. It shows Oil and health. HUD scripts only display state; they never change game state.
 
 ## Save file format
 

@@ -136,8 +136,11 @@ Want it enforced rather than asked? [hooks/](hooks/README.md) holds git and agen
 |---|---|
 | `domain-modeling` | uses it to write ADRs for hard-to-reverse decisions; routes link its glossary (`GLOSSARY.md` or `CONTEXT.md`, whichever you have) |
 | nothing | writes those ADRs itself as short paragraphs in `docs/adr/` |
-| `wayfinder` / `grill-with-docs` | can catch lasting decisions while you plan or grill; say "record this" to be sure |
-| `code-review` | its settled rules in your coding-standards doc get checked on every review |
+| `wayfinder` / `grill-with-docs` | reads the shape before you plan; when the session ends, takes its lasting decisions through together; say "record this" to be sure |
+| `code-review` | its settled rules in your coding-standards doc get checked on every review, and breaks of provisional rules get flagged |
+| a retro | when it ends, repeated corrections become proposals and dead rules are put up for retirement |
+
+Subagents those skills start never see the Project shape block, so the agent hands them the area files they need and writes the signals they report.
 
 ## Tips
 

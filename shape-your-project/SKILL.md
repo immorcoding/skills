@@ -1,6 +1,6 @@
 ---
 name: shape-your-project
-description: Maintain a project's shape, its living software standards per area (architecture, art direction, coding style…). Use when a decision should bind the project beyond the current task, a pattern or user correction recurs, a standard is contradicted or superseded, at a milestone review, when a branch's shape inbox is merged, to set up a new project's standards, or to adopt an existing glossary into them.
+description: Maintain a project's shape, its living software standards per area (architecture, art direction, coding style…) in docs/shape/. Use when a decision should bind the project's future work ("from now on", "always"), a pattern or user correction recurs, a standard is contradicted or superseded, a grill, wayfinder session or retro ends, a branch's shape inbox is merged, at a milestone review, to set up a new project's standards, or to adopt an existing glossary into them.
 ---
 
 # Shape your project
@@ -28,6 +28,8 @@ When a rule becomes settled, hand it off and name the hand-off in the rule's _Ch
 - **mechanical** (syntax, banned API, import shape, file location) → an automated check: lint rule, pre-commit hook or CI job, citing the rule id;
 - **judgement** about code → a pointer in the project's coding-standards doc (`CODING_STANDARDS.md` unless one exists), so reviewers, human or agent, apply it;
 - **visual or audio** (art, sound, content) → asset review: new assets are compared against the area's References, which hold at least one approved example first.
+
+Reviewers meet provisional rules too: the coding-standards doc carries one line asking them to flag code that breaks a provisional rule in `docs/shape/`; add it when it is missing.
 
 ## ADRs
 

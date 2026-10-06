@@ -29,7 +29,7 @@ When a rule becomes settled, hand it off and name the hand-off in the rule's _Ch
 - **judgement** about code → a pointer in the project's coding-standards doc (`CODING_STANDARDS.md` unless one exists), so reviewers, human or agent, apply it;
 - **visual or audio** (art, sound, content) → asset review: new assets are compared against the area's References, which hold at least one approved example first.
 
-Reviewers meet provisional rules too: the coding-standards doc carries one line asking them to flag code that breaks a provisional rule in `docs/shape/`; add it when it is missing.
+The coding-standards doc holds pointers, never rules: each names the area or title file to cite, and one line asks reviewers to flag code that breaks a provisional rule there. Add that line when it is missing; a rule written straight into the doc (by a retro, say) moves into its area, leaving a pointer.
 
 ## ADRs
 

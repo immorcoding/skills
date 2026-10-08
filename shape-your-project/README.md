@@ -49,7 +49,7 @@ A new rule joins the title its scope fits; when none fits, the agent proposes a 
 | provisional | likely to hold | follow it, ask before breaking it |
 | settled | proven by real work | enforced |
 
-Rules move up only on evidence, when real work depends on them.
+Levels change only by proposal, on evidence: a rule moves up when real work depends on it, and down when friction or contradictions keep arising.
 
 ### Signals: the shape's memory
 
@@ -59,7 +59,7 @@ Agents forget everything between sessions, so they leave **signals**: one dated 
 - 2026-10-01 · friction · ART-2 · Night levels look muddy within 32 colours.
 ```
 
-Signals are how a correction counts toward "the third time" across sessions, and what a review uses as evidence. They are cleared once acted on.
+Signals carry corrections across sessions, and a review uses them as evidence. They are cleared once acted on.
 
 ## How to use it
 
@@ -71,14 +71,14 @@ In your project folder, start Claude Code or Codex and say:
 
 > Set up this project's shape.
 
-The agent reads the repo, including standards you already keep (CONTRIBUTING, a style guide), which it links instead of copying. It asks what the project is, suggests 3–4 areas worth keeping consistent (with a reason for each), and interviews you about each one, one question at a time with a recommended answer. Answer "not sure yet" freely: it becomes an open question, not a guess.
+The agent reads the repo, including standards you already keep (CONTRIBUTING, a style guide), which it links instead of copying. It asks what the project is, suggests 3–4 areas worth keeping consistent (with a reason for each), and interviews you about each one, one question at a time with a recommended answer. Answer "not sure yet" freely: it becomes an open question, not a guess. It also asks once whether a lower-tier model should do the shape's mechanical work, and which model.
 
 ### 2. Day to day
 
 Two things keep the shape growing while you work:
 
 - **The Project shape block**, read by every session: agents leave signals and raise pending proposals.
-- **The skill itself**, where installed: the agent reaches for it when a decision sounds like it should last ("let's always use signals for UI events"), when a pattern or correction reaches its third instance, or when a decision contradicts an existing rule (in any area).
+- **The skill itself**, where installed: the agent reaches for it when a decision sounds like it should last ("let's always use signals for UI events"), when a correction or a pattern recurs, or when a decision contradicts an existing rule (in any area).
 
 Agents can miss a moment, so say it when it matters:
 
@@ -108,7 +108,7 @@ The agent deletes the rule and cleans up everything that cites it (checks, stand
 
 ### 5. Work on branches in parallel
 
-Area files have one writer, the **writer branch** (usually `main`), so parallel branches never fight over them. On any other branch, agents write their signals, drafts and your approvals to the branch's **inbox**, `docs/shape/inbox/<branch>.md`, which merges with the code. Once it reaches the writer branch, the agent **drains** it right away, after merging or as soon as it finds the inbox there: signals join their areas, approved drafts become rules with the next id, the rest are put to you.
+Area files have one writer, the **writer branch** (usually `main`), so parallel branches never fight over them. On any other branch, agents write their signals, drafts and your approvals to the branch's **inbox**, `docs/shape/inbox/<branch>.md`, which merges with the code. Once it reaches the writer branch, the agent **drains** it right away, after any merge into that branch: signals join their areas, approved drafts become rules with the next id, new drafts are put to you, and level changes and contradictions wait for your review.
 
 > Drain the shape inbox.
 
@@ -138,7 +138,7 @@ Want it enforced rather than asked? [hooks/](hooks/README.md) holds git and agen
 | nothing | writes those ADRs itself as short paragraphs in `docs/adr/` |
 | `wayfinder` / `grill-with-docs` | reads the shape before you plan; when the session ends, takes its lasting decisions through together; say "record this" to be sure |
 | `code-review` | its settled rules in your coding-standards doc get checked on every review, and breaks of provisional rules get flagged |
-| a retro | when it ends, repeated corrections become proposals and dead rules are put up for retirement; a rule it writes into your coding-standards doc moves into the shape, leaving a pointer |
+| a retro | when it ends, the shape gets a review: level changes, contradictions for you to settle, new rules from corrections, and dead rules put up for retirement; a rule it writes into your coding-standards doc moves into the shape, leaving a pointer |
 
 Subagents those skills start never see the Project shape block, so the agent hands them the area files they need and writes the signals they report.
 

@@ -1,4 +1,4 @@
-# A third correction across sessions
+# A third correction waits for review
 
 Fixture: shaped
 Human: present
@@ -9,11 +9,11 @@ Rename the `update_oil` signal in hud.gd to `oil_changed`. Signals are named in 
 
 ## Script
 
-- Approve every proposal.
+- No review is requested in this run.
 
 ## Expect
 
 - [ ] `hud.gd` names the signal `oil_changed`
-- [ ] `coding-style.md` gains a rule that signals are named in the past tense, with the next STYLE id
-- [ ] `run-log.md` shows the proposal citing three instances: the two earlier correction signals and this one
-- [ ] The two correction signals behind the new rule are gone from Signals
+- [ ] `coding-style.md` gains a third `correction` signal under `gdscript`, with rule id `new`
+- [ ] `coding-style.md` gains no rule and no Proposed item in this run
+- [ ] The two earlier correction signals stay in Signals

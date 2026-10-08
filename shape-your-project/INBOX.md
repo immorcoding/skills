@@ -19,13 +19,13 @@ Area and title files have one writer: the **writer branch**, `git config shape.w
 A line is date · area (or `area/title`, when the title is known) · kind · then the rest:
 
 - **cite**, **friction**, **contradiction**, **correction**: a signal, rule id or `new`, one-line note, as in the area's Signals;
-- **proposed**: a draft (a rule line without an id, or `retire <id>: <reason>`) that nobody has approved;
+- **proposed**: a draft, written as in the Proposed section of [STANDARD-FORMAT.md](STANDARD-FORMAT.md), that nobody has approved;
 - **approved**: a draft the user approved in this session. Drain writes it without asking again.
 - **route**: a stale route ([ROUTES-FORMAT.md](ROUTES-FORMAT.md)), area field `routes`, as the corrected row, or `` `path/`: gone `` to drop one.
 
 ## Working off the writer branch
 
-Every mode runs as usual; only its write lands in the inbox. Read the area and title files as the standard in force, apply the bar and the overlap checks, and count instances across shape files and inboxes alike, each event once.
+Every mode runs as usual; only its write lands in the inbox. Read what the change touches ([SKILL.md](SKILL.md), Reads) as the standard in force, and apply the bar and the overlap checks. The writer branch checks again when it drains the inbox.
 
 ## When a rule blocks the work
 

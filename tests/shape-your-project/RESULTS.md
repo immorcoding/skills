@@ -25,3 +25,5 @@ Latest scenario runs, judged on written files only. Update this table whenever s
 | 19 adopt glossary | not run (feature absent) | pass (Expect corrected after the run: the Save module boundary rightly became ARCH-5) | 2026-10-04 |
 
 06, 07 and 11 passed on the old text too: the model already did those by default, so their changes harden rather than fix.
+
+Rows describe the skill before the 2026-10-07 revision (scoped reads, level proposals in place of counts, contradictions put to the user, a drain after every merge). Nothing has run since. Scenarios 03 and 07 have new expectations, and 07 now runs through a merge; every scenario needs a re-run.

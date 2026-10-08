@@ -1,18 +1,21 @@
-# A decision in one area supersedes a rule in another
+# A merge brings a decision that contradicts another area's rule
 
 Fixture: shaped
 Human: present
 
 ## Prompt
 
-Coding style decision: enemy behaviour lives in data-driven `.tres` behaviour resources; enemy scripts hold no behaviour logic of their own.
+`feature/tres-enemies` was just merged into main. Drain the shape inbox.
 
 ## Script
 
-- Approve every proposal.
+- When asked which of two rules stands: the decision does.
 
 ## Expect
 
-- [ ] A rule capturing the decision exists in one area file
-- [ ] ARCH-1 (enum state machine inside each enemy script) is retired in the same run
-- [ ] `run-log.md` shows the agent named ARCH-1 as superseded
+- [ ] `docs/shape/inbox/` holds no file
+- [ ] `coding-style.md` holds the decision as a rule, with id STYLE-2
+- [ ] The agent asked which rule stands before it retired either
+- [ ] ARCH-1 is gone from `architecture.md`, and the `enemies` title with it
+- [ ] `architecture.md` still reads `Next id: ARCH-5`
+- [ ] `run-log.md` shows the agent read `architecture.md` because the merge changed `src/enemies/`, which routes to ARCH-1

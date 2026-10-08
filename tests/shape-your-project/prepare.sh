@@ -18,6 +18,7 @@ git -C "$run" init -q
 git -C "$run" config core.autocrlf false
 git -C "$run" config user.name fixture
 git -C "$run" config user.email fixture@example.com
+git -C "$run" config shape.delegation off
 git -C "$run" add -A
 git -C "$run" commit -qm fixture
 history="${scenario%.md}.history.sh"

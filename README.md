@@ -4,7 +4,7 @@ Agent skills for Claude Code (and Codex). 给编程智能体用的 skill 合集�
 
 | Skill | What it does |
 |---|---|
-| [shape-your-project](shape-your-project/) | Keeps a project's **shape**: its living software standards per area (architecture, art direction, coding style…). Sets them up in conversation, records lasting decisions, proposes conventions on the rule of three, reviews them at milestones, retires the ones that no longer hold, and queues work from parallel branches in an inbox, with sample hooks to enforce it. [How to use it →](shape-your-project/README.md) |
+| [shape-your-project](shape-your-project/) | Keeps a project's **shape**: its living software standards per area (architecture, art direction, coding style…). Sets them up in conversation, records lasting decisions, proposes level changes and new conventions for your review, reviews them at milestones, retires the ones that no longer hold, and queues work from parallel branches in an inbox, with sample hooks to enforce it. [How to use it →](shape-your-project/README.md) |
 
 ## Install
 

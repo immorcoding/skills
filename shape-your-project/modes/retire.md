@@ -2,9 +2,9 @@
 
 A rule no longer holds. It retires when it is:
 
-- **superseded**: a newer decision replaces it;
+- **superseded**: a newer decision replaces it, including the one the user picked over it in a contradiction;
 - **dead**: its subject is gone from the repo, or the user confirms it never changes a decision (review's silent rules land here on a "retire");
-- **contradicted**: the code keeps breaking it (contradiction signals pile up) and nobody wants it enforced;
+- **contradicted**: the code keeps breaking an exploring rule (contradiction signals pile up) and nobody wants it enforced; a provisional or settled rule goes down a level first ([propose.md](propose.md));
 - **out of scope**: its area left the project.
 
 1. Name the reason and propose the retirement. A settled rule needs the user's explicit yes.

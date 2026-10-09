@@ -3,7 +3,7 @@
 A lasting decision was just made, or the user approved a Proposed item. Capture it as a rule.
 
 1. Apply **the bar**; a decision below it ends here.
-2. Skim every area's title headings and scope lines (a split area's index Titles list), then read in full the decision's **touched titles**: every title whose scope covers its subject, in any area. The title the rule lands in is one of them.
+2. Skim every area's title headings and scope lines (a split area's index Titles list), then read in full the decision's **touched titles**: every title whose scope covers its subject, in any area. The title the rule lands in is one of them. During a drain, skip the titles its related-area read already covered.
    - A **conflict** with a live rule there is offered as one block under the new rule's title: the new rule line without an id, then `retire <id>: superseded by the draft above`. One approval writes both lines: the rule takes the next id, and the retirement goes through [retire.md](retire.md). A decline deletes both.
    - Off the writer branch, the block goes to the inbox as `approved` lines on an in-session yes, as `proposed` lines otherwise. A conflict with a queued, unapproved draft is raised together with it.
    - If the work can't go on under the live rule meanwhile, follow [INBOX.md](../INBOX.md), "When a rule blocks the work".

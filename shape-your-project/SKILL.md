@@ -17,6 +17,14 @@ Propose every edit and write it on the user's approval; a `ROUTES.md` row, which
 
 Promote only on evidence: work that depends on the rule, and its title's Signals. A rule forced by a fixed constraint (hardware, platform, legal) enters as settled.
 
+## Reads
+
+Read what a change touches, not the whole shape:
+
+- A decision reads its **touched titles**, the titles whose scope covers its subject, in any area ([modes/record.md](modes/record.md), step 2).
+- A drain reads its **related areas** in full, once: the areas its non-route inbox lines name. `ROUTES.md` plays no part in them.
+- Only a review reads the whole shape.
+
 ## The bar
 
 A rule earns its line only if a future session, starting cold, would choose differently without it. What config or a check already states stays there.

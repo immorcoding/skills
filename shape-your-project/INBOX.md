@@ -25,7 +25,7 @@ A line is date · area (or `area/title`, when the title is known) · kind · the
 
 ## Working off the writer branch
 
-Every mode runs as usual; only its write lands in the inbox. Read as on the writer branch: a decision reads its touched titles ([modes/record.md](modes/record.md), step 2) as the standard in force. Apply the bar and the conflict check.
+Every mode runs as usual; only its write lands in the inbox. Read as on the writer branch: a decision reads its touched titles ([modes/record.md](modes/record.md), step 2) as the standard in force. Apply the bar, and raise any conflict as record does.
 
 ## When a rule blocks the work
 

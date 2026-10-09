@@ -5,7 +5,7 @@ Human: present
 
 ## Prompt
 
-Retro's done: the vertical slice shipped.
+Retro's done. What went well: the HUD work; what didn't: enemy spawning.
 
 ## Script
 

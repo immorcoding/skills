@@ -59,7 +59,7 @@ Agents forget everything between sessions, so they leave **signals**: one dated 
 - 2026-10-01 · friction · ART-2 · Night levels look muddy within 32 colours.
 ```
 
-Signals are how a correction counts toward "the third time" across sessions, and what a review uses as evidence. They are cleared once acted on.
+Signals carry your corrections across sessions, and are what a review uses as evidence. They are cleared once acted on.
 
 ## How to use it
 
@@ -78,7 +78,7 @@ The agent reads the repo, including standards you already keep (CONTRIBUTING, a 
 Two things keep the shape growing while you work:
 
 - **The Project shape block**, read by every session: agents leave signals and raise pending proposals.
-- **The skill itself**, where installed: the agent reaches for it when a decision sounds like it should last ("let's always use signals for UI events"), when a pattern or correction reaches its third instance, or when a decision conflicts with an existing rule (in any area).
+- **The skill itself**, where installed: the agent reaches for it when a decision sounds like it should last ("let's always use signals for UI events"), when a correction repeats, or when a decision conflicts with an existing rule (in any area).
 
 Agents can miss a moment, so say it when it matters:
 

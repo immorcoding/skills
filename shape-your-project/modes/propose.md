@@ -1,10 +1,9 @@
 # Propose
 
-The **rule of three**: once is a choice, twice a coincidence, three times a convention.
+File every user correction as a **correction** signal under the title it belongs to, with the rule id it corrects, or `new`. A correction worded as a general rule ("signals are named in the past tense") is also a lasting decision: take it through [record.md](record.md).
 
-Count the independent instances: occurrences of the pattern in the repo, matching **correction** signals across all area, title and inbox files, and the one in front of you. Count each event once, whatever traces it left: a correction signal and the code that correction produced are one instance, not two.
+**The repeat rule.** When a `new` correction joins a title, in a session or at a drain, and the title already holds a correction saying the same thing, draft the rule and ask now. A yes goes through [record.md](record.md), or off the writer branch to the inbox as `approved` ([INBOX.md](../INBOX.md)). Unattended, the draft goes to the title's Proposed, or off the writer branch to the inbox as `proposed`. Approved or declined, the draft clears the signals it rested on ([STANDARD-FORMAT.md](../STANDARD-FORMAT.md), Signals).
 
-- **Under three**: when the instance in front of you is a user correction, add a correction signal under the title it belongs to (rule id `new`), so the next session can count it. A code pattern needs no signal: the repo already holds it.
-- **Three or more**: name every instance, draft the rule, and ask. On the user's yes, capture it through [record.md](record.md).
+A correction carrying a rule id is evidence for [review.md](review.md); so is every correction that never repeats. A code pattern is neither a trigger nor a signal.
 
-Done when the instance is counted: either in a signal or in a proposal.
+Done when the correction sits in a signal, and every repeat is drafted and answered or queued.

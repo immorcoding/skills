@@ -1,6 +1,6 @@
 ---
 name: shape-your-project
-description: Maintain a project's shape, its living software standards per area (architecture, art direction, coding style…) in docs/shape/. Use when a decision should bind the project's future work ("from now on", "always"), a pattern or user correction recurs, a decision conflicts with a standard, a standard is contradicted or superseded, a grill, wayfinder session or retro ends, a branch's shape inbox is merged, at a milestone review, to set up a new project's standards, or to adopt an existing glossary into them.
+description: Maintain a project's shape, its living software standards per area (architecture, art direction, coding style…) in docs/shape/. Use when a decision should bind the project's future work ("from now on", "always"), a user correction recurs, a decision conflicts with a standard, a standard is contradicted or superseded, a grill, wayfinder session or retro ends, a branch's shape inbox is merged, at a milestone review, to set up a new project's standards, or to adopt an existing glossary into them.
 ---
 
 # Shape your project
@@ -49,7 +49,7 @@ Read the one file for the mode that fits what triggered you:
 
 - No `docs/shape/` yet → [modes/setup.md](modes/setup.md)
 - A lasting decision was just made, or a Proposed item was approved → [modes/record.md](modes/record.md)
-- A pattern or correction recurred → [modes/propose.md](modes/propose.md)
+- The user corrected you → [modes/propose.md](modes/propose.md)
 - A milestone, or the user asks for a review → [modes/review.md](modes/review.md)
 - A rule is superseded (or lost a conflict), dead, contradicted or out of scope → [modes/retire.md](modes/retire.md)
 - A branch with an inbox file was merged, inbox files wait on the writer branch, or the user asks to drain → [modes/drain.md](modes/drain.md)

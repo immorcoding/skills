@@ -18,3 +18,5 @@ Human: present
 - [ ] `architecture.md` has an ARCH-5 rule saying enemies extend `EnemyBase`, and reads `Next id: ARCH-6`
 - [ ] `coding-style.md` Signals holds the STYLE-1 cite line from the inbox
 - [ ] The HUD colour draft appears in no file under `docs/shape/`
+- [ ] `coding-style.md` has a STYLE-2 rule saying signals are named in the past tense, and reads `Next id: STYLE-3`
+- [ ] Both past-tense correction signals are gone from every file under `docs/shape/`

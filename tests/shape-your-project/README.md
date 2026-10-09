@@ -44,7 +44,7 @@ Never read anything under the tests folder. Act on this user message:
 <Prompt>
 
 Human: <present | absent>.
-If present: the user's answers are scripted below. Wherever the skill has you ask the user, take the matching scripted answer and continue; anything unscripted is answered "approve". Log each question you asked and the answer you used to <run dir>/../run-log.md.
+If present: the user's answers are scripted below. Wherever the skill has you ask the user, take the matching scripted answer and continue; anything unscripted is answered "approve". Log each question you asked, with any table or draft you showed the user alongside it, and the answer you used to <run dir>/../run-log.md.
 If absent: nobody can answer you. Do not ask questions; act as the skill directs for unattended runs.
 
 Script:

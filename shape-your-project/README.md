@@ -112,6 +112,8 @@ Area files have one writer, the **writer branch** (usually `main`), so parallel 
 
 > Drain the shape inbox.
 
+The first drain you're present for asks whether a lower-tier model should do its mechanical pass (filing signals under their rules and writing confirmed routes), and which model. The answer is kept in this clone's git config, so it is asked once; setup asks nothing about it.
+
 A rule that blocks the work can't wait for the merge: the agent opens a decision issue for you (or asks in the session), and the blocked tickets wait on it.
 
 ### 6. Route agents to the right code (optional)

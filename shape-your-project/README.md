@@ -78,7 +78,7 @@ The agent reads the repo, including standards you already keep (CONTRIBUTING, a 
 Two things keep the shape growing while you work:
 
 - **The Project shape block**, read by every session: agents leave signals and raise pending proposals.
-- **The skill itself**, where installed: the agent reaches for it when a decision sounds like it should last ("let's always use signals for UI events"), when a pattern or correction reaches its third instance, or when a decision contradicts an existing rule (in any area).
+- **The skill itself**, where installed: the agent reaches for it when a decision sounds like it should last ("let's always use signals for UI events"), when a pattern or correction reaches its third instance, or when a decision conflicts with an existing rule (in any area).
 
 Agents can miss a moment, so say it when it matters:
 

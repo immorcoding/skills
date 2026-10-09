@@ -42,7 +42,7 @@ Read the one file for the mode that fits what triggered you:
 - No `docs/shape/` yet → [modes/setup.md](modes/setup.md)
 - A lasting decision was just made, or a Proposed item was approved → [modes/record.md](modes/record.md)
 - A pattern or correction recurred → [modes/propose.md](modes/propose.md)
-- A milestone, or the user asks for a review → [modes/review.md](modes/review.md)
+- A milestone, a retro ending, or the user asks for a review → [modes/review.md](modes/review.md)
 - A rule is superseded, dead, contradicted or out of scope → [modes/retire.md](modes/retire.md)
 - A branch with an inbox file was merged, inbox files wait on the writer branch, or the user asks to drain → [modes/drain.md](modes/drain.md)
 - The user asks to move an existing glossary onto the shape → [modes/adopt.md](modes/adopt.md)

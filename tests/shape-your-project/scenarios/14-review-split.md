@@ -5,7 +5,7 @@ Human: present
 
 ## Prompt
 
-Review the project's shape. We just finished the vertical slice.
+Retro's done: the vertical slice shipped.
 
 ## Script
 

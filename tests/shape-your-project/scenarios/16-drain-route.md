@@ -9,7 +9,8 @@ Human: present
 
 ## Script
 
-- Approve everything.
+- Don't delegate.
+- Approve everything else.
 
 ## Expect
 
@@ -17,3 +18,5 @@ Human: present
 - [ ] `docs/shape/inbox/` holds no file
 - [ ] No area file under `docs/shape/` changed, and none gained a Next id or Signals line about routes
 - [ ] `run-log.md` holds no question about the route
+- [ ] `git config shape.delegation` reads `off`
+- [ ] `run-log.md` shows exactly one delegation question

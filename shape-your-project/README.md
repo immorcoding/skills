@@ -86,7 +86,7 @@ Agents can miss a moment, so say it when it matters:
 
 ### 3. Review at milestones
 
-Reviews happen when you ask for one: at a vertical slice, a release, or whenever the shape feels stale.
+Reviews happen when you ask for one: at a vertical slice, a release, or whenever the shape feels stale. A retro ending also runs a review.
 
 > Review the project's shape.
 
@@ -111,6 +111,8 @@ The agent deletes the rule and cleans up everything that cites it (checks, stand
 Area files have one writer, the **writer branch** (usually `main`), so parallel branches never fight over them. On any other branch, agents write their signals, drafts and your approvals to the branch's **inbox**, `docs/shape/inbox/<branch>.md`, which merges with the code. Once it reaches the writer branch, the agent **drains** it right away, after merging or as soon as it finds the inbox there: signals join their areas, approved drafts become rules with the next id, the rest are put to you.
 
 > Drain the shape inbox.
+
+The first drain you're present for asks whether a lower-tier model should do its mechanical pass (filing signals under their rules and writing confirmed routes), and which model. The answer is kept in this clone's git config, so it is asked once; setup asks nothing about it.
 
 A rule that blocks the work can't wait for the merge: the agent opens a decision issue for you (or asks in the session), and the blocked tickets wait on it.
 
@@ -138,7 +140,7 @@ Want it enforced rather than asked? [hooks/](hooks/README.md) holds git and agen
 | nothing | writes those ADRs itself as short paragraphs in `docs/adr/` |
 | `wayfinder` / `grill-with-docs` | reads the shape before you plan; when the session ends, takes its lasting decisions through together; say "record this" to be sure |
 | `code-review` | its settled rules in your coding-standards doc get checked on every review, and breaks of provisional rules get flagged |
-| a retro | when it ends, repeated corrections become proposals and dead rules are put up for retirement; a rule it writes into your coding-standards doc moves into the shape, leaving a pointer |
+| a retro | when it ends, it runs a review; a rule it writes into your coding-standards doc moves into the shape, leaving a pointer |
 
 Subagents those skills start never see the Project shape block, so the agent hands them the area files they need and writes the signals they report.
 

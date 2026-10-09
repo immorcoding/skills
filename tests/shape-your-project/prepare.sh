@@ -15,7 +15,7 @@ mkdir -p "$run"
 cp -r "$here/fixtures/$fixture/." "$run/"
 overlay="${scenario%.md}.overlay"
 if [ -d "$overlay" ]; then cp -r "$overlay/." "$run/"; fi
-git -C "$run" init -q
+git -C "$run" init -q -b main
 git -C "$run" config core.autocrlf false
 git -C "$run" config user.name fixture
 git -C "$run" config user.email fixture@example.com

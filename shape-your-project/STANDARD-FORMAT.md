@@ -108,4 +108,4 @@ Next id: ART-21
   - **contradiction**: code breaks a rule;
   - **correction**: the user corrected the agent.
 
-  A signal is removed once a rule, a review verdict or a retirement acts on it, or once a draft resting on it is approved or declined.
+  A signal is removed once a rule, a review verdict, a retirement or a direct order acts on it, or once a draft resting on it is approved or declined.

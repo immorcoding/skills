@@ -15,7 +15,7 @@ Propose every edit and write it on the user's approval; a `ROUTES.md` row, which
 - **provisional**: likely to hold. Follow it; ask before breaking it.
 - **settled**: proven. Enforce it.
 
-Promote only on evidence: work that depends on the rule, and its title's Signals. A rule forced by a fixed constraint (hardware, platform, legal) enters as settled.
+Levels move one step per review verdict, up or down, on evidence ([modes/review.md](modes/review.md)), or at once by the user's **direct order** ("Settle ART-1"). The order is the approval, so it applies now, with no gates: first name any open friction or contradiction signals against the rule, then write the level; settling still goes to enforcement. Off the writer branch, the order becomes one inbox line, `approved · level <id> <level>`. A settled rule moving down drops its _Check:_ and removes the hand-off it names; the rule stays, so this is not retire's cascade. A rule forced by a fixed constraint (hardware, platform, legal) enters as settled.
 
 ## Reads
 
@@ -50,7 +50,7 @@ Read the one file for the mode that fits what triggered you:
 - No `docs/shape/` yet → [modes/setup.md](modes/setup.md)
 - A lasting decision was just made, or a Proposed item was approved → [modes/record.md](modes/record.md)
 - The user corrected you → [modes/propose.md](modes/propose.md)
-- A milestone, or the user asks for a review → [modes/review.md](modes/review.md)
+- A milestone, a retro ending, or the user asks for a review → [modes/review.md](modes/review.md)
 - A rule is superseded (or lost a conflict), dead, contradicted or out of scope → [modes/retire.md](modes/retire.md)
 - A branch with an inbox file was merged, inbox files wait on the writer branch, or the user asks to drain → [modes/drain.md](modes/drain.md)
 - The user asks to move an existing glossary onto the shape → [modes/adopt.md](modes/adopt.md)

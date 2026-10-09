@@ -49,7 +49,7 @@ A new rule joins the title its scope fits; when none fits, the agent proposes a 
 | provisional | likely to hold | follow it, ask before breaking it |
 | settled | proven by real work | enforced |
 
-Rules move up only on evidence, when real work depends on them.
+Rules move one level per review, up or down, on evidence, or at once on your direct order ("Settle ART-1").
 
 ### Signals: the shape's memory
 
@@ -92,7 +92,7 @@ Reviews happen when you ask for one: at a vertical slice, a release, or whenever
 
 The agent sorts every rule by evidence:
 
-- **active**: signals or code show it's being used, so it's kept or promoted;
+- **active**: signals or code show it's being used, so it's kept, or moved one level up, or down when friction keeps arising;
 - **dead**: its subject is gone from the repo, so it's retired;
 - **silent**: there's no evidence either way, so **it asks you**. Rare-but-critical rules (like save-file migrations) live here, so they're never retired just for being quiet.
 

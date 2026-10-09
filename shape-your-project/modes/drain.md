@@ -6,6 +6,7 @@ A branch with an inbox file was merged into the writer branch, inbox files wait 
 2. **Judgement pass.** Read the drain's **related areas** in full, once ([SKILL.md](../SKILL.md), Reads), then apply the listed lines in file order:
    - a `new` signal joins the title its scope fits (an `area/title` field names the title);
    - **approved** goes through [record.md](record.md) or [retire.md](retire.md) without asking again, taking the next id here; a rule lands in the area its line names. An approved rule line that conflicts with a live rule loses its approval, unless an approved `retire <id>` of that rule comes with it: raise it now as record's conflict block; unattended, the block moves to its title's Proposed;
+   - **approved · level** `<id> <level>` sets the rule's level as a direct order does ([SKILL.md](../SKILL.md), Levels): settling hands it to enforcement, and leaving settled drops its _Check:_ and the hand-off;
    - **proposed** is raised with the user now and recorded or deleted on the answer; unattended, it moves to its title's Proposed;
    - a **route** line the tree contradicts gives way to a row written from the tree.
 

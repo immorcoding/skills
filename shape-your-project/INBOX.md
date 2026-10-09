@@ -20,7 +20,7 @@ A line is date · area (or `area/title`, when the title is known) · kind · the
 
 - **cite**, **friction**, **contradiction**, **correction**: a signal, rule id or `new`, one-line note, as in the area's Signals;
 - **proposed**: a draft (a rule line without an id, or `retire <id>: <reason>`) that nobody has approved;
-- **approved**: a draft the user approved in this session. Drain writes it without asking again.
+- **approved**: a draft the user approved in this session, or the user's direct level order as `level <id> <level>` ([SKILL.md](SKILL.md), Levels). Drain writes it without asking again.
 - **route**: a stale route ([ROUTES-FORMAT.md](ROUTES-FORMAT.md)), area field `routes`, as the corrected row, or `` `path/`: gone `` to drop one.
 
 ## Working off the writer branch

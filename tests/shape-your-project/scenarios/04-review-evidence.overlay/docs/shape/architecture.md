@@ -23,13 +23,23 @@ What UI scripts may do.
 
 - **ARCH-2** · exploring · UI scripts only display state; game logic lives outside `src/ui`. _Why:_ keeps logic testable.
 
+### Signals
+
+- 2026-09-15 · cite · ARCH-2 · HUD only displays health; damage stays in `player.gd`.
+- 2026-09-26 · cite · ARCH-2 · Pause overlay kept its logic outside `src/ui`.
+
 ## persistence
 
 Save files and what survives an update.
 
 ### Rules
 
-- **ARCH-3** · settled · Save files carry a version number and a migration path. _Why:_ players' saves must survive updates. _Source:_ [ADR-0001](../adr/0001-versioned-saves.md)
+- **ARCH-3** · settled · Save files carry a version number and a migration path. _Why:_ players' saves must survive updates. _Source:_ [ADR-0001](../adr/0001-versioned-saves.md) _Check:_ pointer in [CODING_STANDARDS.md](../../CODING_STANDARDS.md).
+
+### Signals
+
+- 2026-09-18 · friction · ARCH-3 · A one-field save tweak for playtests needed a full migration step.
+- 2026-09-27 · friction · ARCH-3 · Each playtest build's inventory rebalance needed its own migration.
 
 ## netcode
 

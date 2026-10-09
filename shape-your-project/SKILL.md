@@ -15,7 +15,7 @@ Propose every edit and write it on the user's approval; a `ROUTES.md` row, which
 - **provisional**: likely to hold. Follow it; ask before breaking it.
 - **settled**: proven. Enforce it.
 
-Levels move one step per review verdict, up or down, on evidence ([modes/review.md](modes/review.md)), or at once by the user's **direct order** ("Settle ART-1"). The order is the approval, so it applies now, with no gates: first name any open friction or contradiction signals against the rule, then write the level; settling still goes to enforcement. Off the writer branch, the order becomes one inbox line, `approved · level <id> <level>`, with any approved example the hand-off needs as a trailing note. A settled rule moving down drops its _Check:_ and removes the hand-off it names; the rule stays, so this is not retire's cascade. A rule forced by a fixed constraint (hardware, platform, legal) enters as settled.
+Levels move one step per review verdict, up or down, on evidence ([modes/review.md](modes/review.md)), or at once by the user's **direct order** ("Settle ART-1"). The order is the approval, so it applies now, with no gates: first name any open friction or contradiction signals against the rule, then write the level; settling still goes to enforcement. Off the writer branch, the order becomes one inbox line, `approved · level <id> <level>` ([INBOX.md](INBOX.md)). A settled rule moving down drops its _Check:_ and removes the hand-off it names; the rule stays, so this is not retire's cascade. A rule forced by a fixed constraint (hardware, platform, legal) enters as settled.
 
 ## Reads
 

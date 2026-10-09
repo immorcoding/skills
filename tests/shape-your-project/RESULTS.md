@@ -2,6 +2,8 @@
 
 Latest scenario runs, judged on written files only. Update this table whenever scenarios are run.
 
+Every row below predates the scoped-reads-and-levels rework (#24): every scenario needs a re-run against it.
+
 | Scenario | Old skill (8a6b7ce) | Current skill | Date |
 |---|---|---|---|
 | 01 setup baseline | pass | pass (Expect corrected: accepted hooks add files outside `docs/shape/`) | 2026-10-04 |

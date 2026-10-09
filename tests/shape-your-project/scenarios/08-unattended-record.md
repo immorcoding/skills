@@ -1,11 +1,11 @@
-# An unattended run queues its draft
+# An unattended run queues a conflicting draft
 
 Fixture: shaped
 Human: absent
 
 ## Prompt
 
-Planning ticket resolved: all player-facing text goes through `tr()` for localization from day one. Capture this decision in the project's standards.
+Coding style decision: enemy behaviour lives in data-driven `.tres` behaviour resources; enemy scripts hold no behaviour logic of their own.
 
 ## Script
 
@@ -13,5 +13,5 @@ Planning ticket resolved: all player-facing text goes through `tr()` for localiz
 
 ## Expect
 
-- [ ] Every Rules section is unchanged
-- [ ] An area file has a Proposed section holding the `tr()` draft
+- [ ] Every Rules section is unchanged (ARCH-1 is still live)
+- [ ] `coding-style.md` has a Proposed section holding the `.tres` draft plus `retire ARCH-1: superseded by the draft above`; a title-level Proposed, or the area-level one with a `title <name> (<scope>):` prefix, both count

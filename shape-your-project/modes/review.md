@@ -13,9 +13,7 @@ A milestone (vertical slice, release), a retro ending, or on request. Walk the w
    - **promote** an active rule with no open friction or contradiction signals against it; settled also needs a hand-off to name in its _Check:_ ([SKILL.md](../SKILL.md), Enforcement);
    - **demote** a rule whose friction or contradiction signals keep arising while the work still needs it; a settled rule going down drops its _Check:_ and the hand-off it names ([SKILL.md](../SKILL.md), Levels). An exploring rule the code keeps breaking retires instead.
 
-   - **conflicts**: each queued conflict (a conflict block, or `retire <id>: conflicts with <id>`) goes to the user as a choice between the two rules; the loser retires as superseded.
-
-   Unattended, leave every level and its signals as they are.
+   Each queued conflict (a conflict block, or `retire <id>: conflicts with <id>`) goes to the user as a choice between the two rules; the loser retires as superseded. Unattended, conflicts stay queued, and every level and its signals stay as they are.
 4. Check every open question against the work since; each answered one becomes a proposed rule. Draft rules from the correction signals left, and ask.
 5. Present all verdicts as one table (id · rule · status · verdict · evidence). Retirements go through [retire.md](retire.md); newly settled rules go to enforcement.
 6. Check the **titles** ([STANDARD-FORMAT.md](../STANDARD-FORMAT.md)): split every unsplit area holding more than 15 rules; give every rule outside a title one, by scope; propose merging or rescoping titles whose scopes overlap, so each rule fits exactly one.

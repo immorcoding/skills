@@ -16,5 +16,5 @@ Record this as a standard: every enemy extends a shared `EnemyBase` script that 
 
 - [ ] The run is on branch `feature/hud`, and every file under `docs/shape/` other than the inbox is unchanged (`git diff` on them is empty)
 - [ ] `docs/shape/inbox/feature-hud.md` exists and holds an `approved` line for the `EnemyBase` rule, without a rule id
-- [ ] The inbox holds `approved · level ART-1 settled`
+- [ ] The inbox holds `approved · level ART-1 settled`, with a note naming `art/approved/bat_idle.png`
 - [ ] `architecture.md` still reads `Next id: ARCH-5`

@@ -1,6 +1,6 @@
 # Review
 
-A milestone (vertical slice, release, or on request). Walk the whole shape.
+A milestone (vertical slice, release), a retro ending, or on request. Walk the whole shape.
 
 1. Drain any inbox files first ([drain.md](drain.md)), so their signals count as evidence, and bring the entry block up to [ENTRY-BLOCK.md](../ENTRY-BLOCK.md).
 2. Sort every rule in every area by evidence:

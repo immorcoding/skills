@@ -49,7 +49,7 @@ A new rule joins the title its scope fits; when none fits, the agent proposes a 
 | provisional | likely to hold | follow it, ask before breaking it |
 | settled | proven by real work | enforced |
 
-Rules move up only on evidence, when real work depends on them.
+Rules move one level per review, up or down, on evidence, or at once on your direct order ("Settle ART-1").
 
 ### Signals: the shape's memory
 
@@ -59,7 +59,7 @@ Agents forget everything between sessions, so they leave **signals**: one dated 
 - 2026-10-01 · friction · ART-2 · Night levels look muddy within 32 colours.
 ```
 
-Signals are how a correction counts toward "the third time" across sessions, and what a review uses as evidence. They are cleared once acted on.
+Signals carry your corrections across sessions, and are what a review uses as evidence. They are cleared once acted on.
 
 ## How to use it
 
@@ -78,7 +78,7 @@ The agent reads the repo, including standards you already keep (CONTRIBUTING, a 
 Two things keep the shape growing while you work:
 
 - **The Project shape block**, read by every session: agents leave signals and raise pending proposals.
-- **The skill itself**, where installed: the agent reaches for it when a decision sounds like it should last ("let's always use signals for UI events"), when a pattern or correction reaches its third instance, or when a decision contradicts an existing rule (in any area).
+- **The skill itself**, where installed: the agent reaches for it when a decision sounds like it should last ("let's always use signals for UI events"), when a correction repeats, or when a decision conflicts with an existing rule (in any area).
 
 Agents can miss a moment, so say it when it matters:
 
@@ -86,13 +86,13 @@ Agents can miss a moment, so say it when it matters:
 
 ### 3. Review at milestones
 
-Reviews happen when you ask for one: at a vertical slice, a release, or whenever the shape feels stale.
+Reviews happen when you ask for one: at a vertical slice, a release, or whenever the shape feels stale. A retro ending also runs a review.
 
 > Review the project's shape.
 
 The agent sorts every rule by evidence:
 
-- **active**: signals or code show it's being used, so it's kept or promoted;
+- **active**: signals or code show it's being used, so it's kept, or moved one level up, or down when friction keeps arising;
 - **dead**: its subject is gone from the repo, so it's retired;
 - **silent**: there's no evidence either way, so **it asks you**. Rare-but-critical rules (like save-file migrations) live here, so they're never retired just for being quiet.
 
@@ -111,6 +111,8 @@ The agent deletes the rule and cleans up everything that cites it (checks, stand
 Area files have one writer, the **writer branch** (usually `main`), so parallel branches never fight over them. On any other branch, agents write their signals, drafts and your approvals to the branch's **inbox**, `docs/shape/inbox/<branch>.md`, which merges with the code. Once it reaches the writer branch, the agent **drains** it right away, after merging or as soon as it finds the inbox there: signals join their areas, approved drafts become rules with the next id, the rest are put to you.
 
 > Drain the shape inbox.
+
+The first drain you're present for asks whether a lower-tier model should do its mechanical pass (filing signals under their rules and writing confirmed routes), and which model. The answer is kept in this clone's git config, so it is asked once; setup asks nothing about it.
 
 A rule that blocks the work can't wait for the merge: the agent opens a decision issue for you (or asks in the session), and the blocked tickets wait on it.
 
@@ -138,7 +140,7 @@ Want it enforced rather than asked? [hooks/](hooks/README.md) holds git and agen
 | nothing | writes those ADRs itself as short paragraphs in `docs/adr/` |
 | `wayfinder` / `grill-with-docs` | reads the shape before you plan; when the session ends, takes its lasting decisions through together; say "record this" to be sure |
 | `code-review` | its settled rules in your coding-standards doc get checked on every review, and breaks of provisional rules get flagged |
-| a retro | when it ends, repeated corrections become proposals and dead rules are put up for retirement; a rule it writes into your coding-standards doc moves into the shape, leaving a pointer |
+| a retro | when it ends, it runs a review; a rule it writes into your coding-standards doc moves into the shape, leaving a pointer |
 
 Subagents those skills start never see the Project shape block, so the agent hands them the area files they need and writes the signals they report.
 

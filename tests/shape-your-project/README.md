@@ -8,7 +8,7 @@ Tests for `shape-your-project`. A **scenario run** gives a fresh agent the skill
 - `fixtures/shaped/`: the same repo with a shape: three areas, an ADR, an entry block in `CLAUDE.md`.
 - `scenarios/*.md`: one scenario per file. A scenario's overlay, if any, is the directory beside it with the same name plus `.overlay/`, copied over the fixture.
 - `scenarios/<name>.history.sh` (optional, beside the scenario): run inside the prepared repo after the fixture commit, to add history the scenario depends on.
-- `prepare.sh <scenario>`: builds a run directory and prints its path.
+- `prepare.sh <scenario>`: builds a run directory and prints its path. It sets `shape.delegation off`; a history script unsets it to test the delegation question.
 - `hooks/run.sh`: unit tests for the sample hooks in `shape-your-project/hooks/`; plain `sh`, no agent, run them on every hook change.
 
 ## Scenario format
@@ -33,7 +33,7 @@ Human: present | absent
 
 1. `./prepare.sh scenarios/<name>.md [parent dir]`: copies the fixture and overlay into a fresh `repo/` and commits it, so the run's changes show in `git diff`.
 2. Start a fresh subagent with the prompt below, filled in.
-3. Judge every Expect line against `git status` and `git diff` in the run directory. A scenario passes when every line holds.
+3. Judge every Expect line against `git status` and `git diff` in the run directory, and against `git config` there where a line names it. A scenario passes when every line holds.
 
 ```text
 You are an agent working in the repo at <run dir>. Read its CLAUDE.md or AGENTS.md first, if present: they are your project instructions.
@@ -44,7 +44,7 @@ Never read anything under the tests folder. Act on this user message:
 <Prompt>
 
 Human: <present | absent>.
-If present: the user's answers are scripted below. Wherever the skill has you ask the user, take the matching scripted answer and continue; anything unscripted is answered "approve". Log each question you asked and the answer you used to <run dir>/../run-log.md.
+If present: the user's answers are scripted below. Wherever the skill has you ask the user, take the matching scripted answer and continue; anything unscripted is answered "approve". Log each question you asked, with any table or draft you showed the user alongside it, and the answer you used to <run dir>/../run-log.md.
 If absent: nobody can answer you. Do not ask questions; act as the skill directs for unattended runs.
 
 Script:

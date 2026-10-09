@@ -101,11 +101,11 @@ Next id: ART-21
 - **Next id** is the id the next rule takes, one line per area, in `<area>.md`. Take it, then bump it, on the writer branch only ([INBOX.md](INBOX.md)); it only ever rises, so a retired id stays retired. An area without the line gets one: one past the highest id in its files, in Rejected, or in their git history.
 - **Pillars** are 3–5 lines of intent that settle ties the rules don't cover.
 - **References** carry what prose can't: images, example files, approved assets. Visual areas lean on references over rules.
-- **Proposed** holds drafts awaiting the user, each with why it was queued: a new rule is a rule line without an id; a retirement is `retire <id>: <reason>`; a rule needing a new title is prefixed `title <name> (<scope>):`. An approved rule takes the next id; an approved retirement goes through retire; a declined draft is deleted.
+- **Proposed** holds drafts awaiting the user, each with why it was queued: a new rule is a rule line without an id; a retirement is `retire <id>: <reason>`; a rule needing a new title is prefixed `title <name> (<scope>):`. An approved rule takes the next id; an approved retirement goes through retire; a declined draft is deleted. A new rule followed by `retire <id>: superseded by the draft above` is approved or declined as one; `retire <id>: conflicts with <id>` is put to the user as the choice in [review.md](modes/review.md), not approved on its own.
 - **Signals** are evidence for later sessions, under the title of the rule they name (a `new` signal under the title its subject fits): date · kind · rule id or `new` · one-line note. The kinds:
   - **cite**: a rule decided part of a change;
   - **friction**: a rule got in the way;
   - **contradiction**: code breaks a rule;
   - **correction**: the user corrected the agent.
 
-  A signal is removed once a rule, a review verdict or a retirement acts on it.
+  A signal is removed once a rule, a review verdict, a retirement or a direct order acts on it, or once a draft resting on it is approved or declined.

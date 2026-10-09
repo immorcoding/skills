@@ -2,14 +2,16 @@
 
 A branch with an inbox file was merged into the writer branch, inbox files wait on the writer branch, or the user asks to drain. Run on the writer branch, right away: until it runs, the inbox's approved rules bind no other branch.
 
-1. Read every file in `docs/shape/inbox/` ([INBOX.md](../INBOX.md) has the format).
-2. Apply every line, in file order:
-   - a signal joins its title's Signals, without the area field (an `area/title` field names the title; a bare `area` is placed by scope);
-   - **approved** goes through [record.md](record.md) or [retire.md](retire.md) without asking again, taking the next id here;
-   - **proposed** is raised with the user now and recorded or deleted on the answer; unattended, it moves to its title's Proposed;
-   - **route** is checked against the tree and written to `ROUTES.md` without asking; a line the tree contradicts gives way to a row written from the tree.
+1. **Mechanical pass.** Read every file in `docs/shape/inbox/` ([INBOX.md](../INBOX.md) has the format). A signal naming a live rule's id joins that rule's title's Signals, without the area field; a `route` line the tree confirms is written to `ROUTES.md` without asking. Leave every other line for step 2, and list them.
 
-   A correction joining Signals may complete a rule of three: count it through [propose.md](propose.md).
-3. Delete each drained inbox file, in the same commit as the area edits it caused.
+   **Delegation** is set once per clone, in local git config; any value but `on` counts as off. When `shape.delegation` is `on`, run this pass as one batched subagent on the model `shape.delegationModel` names, however small the pass, and take its report of what it wrote and what it left. Hand it this step, [INBOX.md](../INBOX.md), the inbox files, and only the titles its signals name and the `ROUTES.md` rows its route lines touch: for this subagent, that replaces the whole area files the entry block hands over. When `shape.delegation` is unset and someone is present, first ask whether a lower-tier model should run this pass, and which; store `git config shape.delegation on` with `git config shape.delegationModel <name>`, or `git config shape.delegation off` on a no. Unset and unattended, run the pass yourself, write no config and say nothing. When `shape.delegationModel` is unset or this harness can't start it, run the pass yourself and say so in the session; unattended, say so in the drain commit's message, without naming the model.
+2. **Judgement pass**, always on the main agent. Read the drain's **related areas** in full, once ([SKILL.md](../SKILL.md), Reads), then apply the listed lines in file order:
+   - a `new` signal joins the title its scope fits (an `area/title` field names the title); a `new` correction goes through [propose.md](propose.md)'s repeat rule;
+   - **approved** goes through [record.md](record.md) or [retire.md](retire.md) without asking again, taking the next id here; a rule lands in the area its line names. An approved rule line that conflicts with a live rule loses its approval, unless an approved `retire <id>` of that rule comes with it: raise it now as record's conflict block; unattended, the block moves to its title's Proposed;
+   - **approved · level** `<id> <level>` sets the rule's level as a direct order does ([SKILL.md](../SKILL.md), Levels): settling hands it to enforcement, taking the line's note as the approved example when it names a file the tree holds, and leaving settled drops its _Check:_ and the hand-off. A visual or audio rule settling with no such note, and no approved example already in its References, asks for one, and on a no deletes the line with the level as it is; unattended, that line stays in the inbox and the level stays as it is. A held line whose rule changed level since is dropped;
+   - **proposed** is raised with the user now and recorded or deleted on the answer, a `retire <id>: conflicts with <id>` as the choice [review.md](review.md) gives; unattended, it moves to its title's Proposed;
+   - a **route** line the tree contradicts gives way to a row written from the tree;
+   - a signal, `approved · level` or `retire <id>` line whose id is no live rule is dropped: a retirement already acted on it, or the rule never existed.
+3. Delete each drained inbox file, in the same commit as the area edits it caused; a file keeping a level line that waits for its example keeps only that line.
 
-Done when `docs/shape/inbox/` holds no file and every line sits in an area or title file, in `ROUTES.md`, in Proposed, or was declined.
+Done when every line sits in an area or title file, in `ROUTES.md`, in Proposed, or was declined or dropped, and `docs/shape/inbox/` holds no file but those keeping a level line that waits for its example.

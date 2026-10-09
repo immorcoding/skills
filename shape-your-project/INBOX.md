@@ -20,12 +20,12 @@ A line is date · area (or `area/title`, when the title is known) · kind · the
 
 - **cite**, **friction**, **contradiction**, **correction**: a signal, rule id or `new`, one-line note, as in the area's Signals;
 - **proposed**: a draft (a rule line without an id, or `retire <id>: <reason>`) that nobody has approved;
-- **approved**: a draft the user approved in this session. Drain writes it without asking again.
+- **approved**: a draft the user approved in this session, or the user's direct level order as `level <id> <level>`, with an optional ` · <note>` such as the approved example a visual or audio rule needs before it settles ([SKILL.md](SKILL.md), Levels). Drain writes it without asking again.
 - **route**: a stale route ([ROUTES-FORMAT.md](ROUTES-FORMAT.md)), area field `routes`, as the corrected row, or `` `path/`: gone `` to drop one.
 
 ## Working off the writer branch
 
-Every mode runs as usual; only its write lands in the inbox. Read the area and title files as the standard in force, apply the bar and the overlap checks, and count instances across shape files and inboxes alike, each event once.
+Every mode runs as usual; only its write lands in the inbox. Read as on the writer branch: a decision reads its touched titles ([modes/record.md](modes/record.md), step 2) as the standard in force. Apply the bar, and raise any conflict as record does.
 
 ## When a rule blocks the work
 

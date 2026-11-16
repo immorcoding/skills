@@ -26,7 +26,7 @@ The "After #24" column is the scoped-reads-and-levels rework (spec #24); each ce
 | 18 record split | not run (feature absent) | pass | pass (417a06f) | 2026-10-09 |
 | 19 adopt glossary | not run (feature absent) | pass (Expect corrected after the run: the Save module boundary rightly became ARCH-5) | pass (5b83474) | 2026-10-09 |
 | 20 link on branch | not run (feature absent) | not run (feature absent) | pass (1e92b56, #33) | 2026-11-16 |
-| 21 drain link | not run (feature absent) | not run (feature absent) | pass (1e92b56, #33) | 2026-11-16 |
+| 21 drain link | not run (feature absent) | not run (feature absent) | pass (4ab3835, #33; first passed on 1e92b56) | 2026-11-16 |
 
 The stale-link change (#33) touched drain, so 13 and 16 were re-run on 1e92b56 as well: both pass.
 

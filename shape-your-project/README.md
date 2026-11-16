@@ -112,7 +112,9 @@ Area files have one writer, the **writer branch** (usually `main`), so parallel 
 
 > Drain the shape inbox.
 
-The first drain you're present for asks whether a lower-tier model should do its mechanical pass (filing signals under their rules and writing confirmed routes), and which model. The answer is kept in this clone's git config, so it is asked once; setup asks nothing about it.
+The first drain you're present for asks whether a lower-tier model should do its mechanical pass (filing signals under their rules, writing confirmed routes and applying confirmed link fixes), and which model. The answer is kept in this clone's git config, so it is asked once; setup asks nothing about it.
+
+A link in an area file whose target moved (a renamed ADR or source file) is a **stale link**: the agent fixes it in place on the writer branch, and on a branch adds a `link` line to the inbox, so a rename never needs an area edit.
 
 A rule that blocks the work can't wait for the merge: the agent opens a decision issue for you (or asks in the session), and the blocked tickets wait on it.
 

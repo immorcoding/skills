@@ -14,6 +14,7 @@ Area and title files have one writer: the **writer branch**, `git config shape.w
 - 2026-10-02 · architecture · proposed · provisional · Enemies extend `EnemyBase`, which owns health and damage. _Why:_ three enemies duplicate it.
 - 2026-10-02 · architecture · approved · retire ARCH-3: saves are wiped on each update during early access.
 - 2026-10-02 · routes · route · `src/ui/pause/`: the pause menu. Entry: `pause_menu.gd`. Rules: ARCH-2
+- 2026-10-02 · architecture · link · `../../src/save.gd` → `../../src/save/save.gd`
 ```
 
 A line is date · area (or `area/title`, when the title is known) · kind · then the rest:
@@ -22,6 +23,7 @@ A line is date · area (or `area/title`, when the title is known) · kind · the
 - **proposed**: a draft (a rule line without an id, or `retire <id>: <reason>`) that nobody has approved;
 - **approved**: a draft the user approved in this session, or the user's direct level order as `level <id> <level>`, with an optional ` · <note>` such as the approved example a visual or audio rule needs before it settles ([SKILL.md](SKILL.md), Levels). Drain writes it without asking again.
 - **route**: a stale route ([ROUTES-FORMAT.md](ROUTES-FORMAT.md)), area field `routes`, as the corrected row, or `` `path/`: gone `` to drop one.
+- **link**: a stale link ([ROUTES-FORMAT.md](ROUTES-FORMAT.md), Stale links), area field the file that holds it (`area` or `area/title`), then `` `old/target` → `new/target` ``, or `` `old/target`: gone `` when the target was deleted. Targets are written as the link has them, relative to that file.
 
 ## Working off the writer branch
 

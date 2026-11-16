@@ -12,6 +12,8 @@ Samples that make the **writer branch** mechanical: off it, area files (`docs/sh
 
 `ROUTES.md` counts as an area file here, so off the writer branch it changes only through the inbox. The first four source `shape-lib.sh`, so copy the folder whole, e.g. to `scripts/shape-hooks/`. The writer branch is `git config shape.writerBranch`, else the branch `origin/HEAD` points at, else `main`.
 
+A project's own link checker should treat an inbox `link` line the way `routes-check.sh` treats a `route` line: on any branch, it accepts a broken link in an area or title file when an inbox `link` line names that file and the link's old target, and refuses it otherwise. The writer branch needs this too: a merge brings the broken link and its `link` line in together, and the drain fixes the link and deletes the line in one commit. No sample ships for it.
+
 ## Wiring
 
 Add the hooks to whatever the project already runs; never replace an existing hook.

@@ -29,3 +29,11 @@ A **stale route** is a row whose path is gone, a row that misdescribes its direc
 - on the writer branch, edit the row directly, without asking: the tree is the approval;
 - on any other branch, add a `route` line to the branch's inbox ([INBOX.md](INBOX.md));
 - a read-only subagent names the stale route in its report, and the session that dispatched it writes the line.
+
+## Stale links
+
+A **stale link** is a link in an area or title file (a rule's _Why:_ or _Source:_, say) whose target the tree no longer holds at that path, usually after a rename or a move. It is kept current like a stale route, with or without a `ROUTES.md`. Whoever meets one fixes it:
+
+- on the writer branch, edit the link directly, without asking: the tree is the approval;
+- on any other branch, add a `link` line to the branch's inbox ([INBOX.md](INBOX.md)) and leave the area file as it is;
+- a read-only subagent names the stale link in its report, and the session that dispatched it writes the line.
